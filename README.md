@@ -15,25 +15,25 @@
 
  
 ### Association
-- has_many :item
-- has-many :purchase_record
+- has_many :items
+- has-many :purchase_records
 
 ## items テーブル
 
-| Column               | Type       | Options                        |
-| ---------------------| ---------- | ------------------------------ |
-| name                 | string     | null: false                    |
-| explanation          | text       | null: false                    |
-| category_id          | integer    | null: false                    | 
-| condition_id         | integer    | null: false                    |
-| region_id            | integer    | null: false                    |
-| delivery_fee_payment | integer    | null: false                    |
-| period_id            | integer    | null: false                    |
-| price                | integer    | null: false                    |
-| user                 | references | null: false, foreign_key: true |
+| Column                  | Type       | Options                        |
+| ---------------------   | ---------- | ------------------------------ |
+| name                    | string     | null: false                    |
+| explanation             | text       | null: false                    |
+| category_id             | integer    | null: false                    | 
+| condition_id            | integer    | null: false                    |
+| region_id               | integer    | null: false                    |
+| delivery_fee_payment_id | integer    | null: false                    |
+| period_id               | integer    | null: false                    |
+| price                   | integer    | null: false                    |
+| user                    | references | null: false, foreign_key: true |
 
 ### Association
-- belong_to :user
+- belongs_to :user
 - has_one :purchase_record
 
 ## purchase_records テーブル
@@ -44,9 +44,9 @@
 | item    | references | null: false, foreign_key: true |
  
 ### Association
-- belong_to :user
+- belongs_to :user
 - has_one :shipping_info
-- belong_to :item
+- belongs_to :item
 
 
 ## shipping_infos テーブル
@@ -63,5 +63,5 @@
 
 
 ### Association
-- belong_to :purchase_record
+- belongs_to :purchase_record
 
